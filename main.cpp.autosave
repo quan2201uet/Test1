@@ -84,7 +84,7 @@ public:
     MallardDuck() : Duck(new FlyWithWings(), new Quack()){}
     void Display() override
     {
-        cout << "i`m a MallardDuck" << endl;
+        cout << " i`m a MallardDuck" << endl;
     }
 
 };
@@ -105,7 +105,9 @@ int main()
  mallard->Display();
  mallard->PerformFly();
  mallard->PerformQuack();
+ 
  cout << endl;
+ 
  Duck* model = new ModelDuck();
  model->Display();
  model->PerformFly();
