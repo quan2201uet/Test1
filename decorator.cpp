@@ -1,43 +1,27 @@
-#include <iostream>
-#include <string>
-using namespace  std;
+#include "decorator.h"
 
-class Beverage
-{
-public:
-    virtual string getDiscription() = 0;
-    virtual double cost() = 0;
-    virtual ~Beverage(){}
-};
 
-class Espresso : public Beverage
+// class chocolatte
+string chocolatte :: getDiscription()
 {
-public:
-    string getDiscription() override {return "espresso";}
-    double cost() override {return 2.9;}
-};
+    return "Chocolatte";
+}
 
-class Mocha : public Beverage
+double chocolatte :: cost()
 {
-private:
-    Beverage* beverage;
-public:
-    Mocha(Beverage* bev): beverage(bev){}
-    string getDiscription() override
-    {
-        return beverage->getDiscription() + ", Mocha";
-    }
-    double cost() override
-    {
-        return beverage->cost()+0.5;
-    }
-};
+    return 2.5;
+}
 
-int main()
+// class socola
+
+Socola :: Socola(Beverage* bev) : beverage(bev){}
+
+string Socola :: getDiscription()
 {
-    Beverage* beverage = new Espresso();
-    cout << "Discription: " << beverage->getDiscription() << ", cost: " << beverage->cost();
-    Mocha* mocha = new Mocha(beverage);
-    cout << "Discription: " << mocha->getDiscription() << ", cost: " << mocha->cost();
-    return 0;
+    return beverage->getDiscription() + " + Socola";
+}
+
+double Socola :: cost()
+{
+    return beverage->cost() + 0.5;
 }

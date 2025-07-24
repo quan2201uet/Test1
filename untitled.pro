@@ -4,10 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        decorator.cpp \
+    decorator.cpp \
+        duck.cpp \
         main.cpp \
-        print.cpp \
-        observer_pattern.cpp
 
 HEADERS += \
-    print.h
+    decorator.h \
+    duck.h
